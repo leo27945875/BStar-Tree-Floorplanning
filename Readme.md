@@ -1,4 +1,4 @@
-# B*-Tree floorplanning by Simulated Annealing
+# B*-Tree floorplanning with Aspect Ratio Constrain
 
 * **red-star** : Position of block
 * **purple rectangle** : Block
