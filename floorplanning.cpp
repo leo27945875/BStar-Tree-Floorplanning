@@ -153,10 +153,20 @@ void Floorplanning::perturb(){
 
     int nBlock = m_blocks.size();
 
-    // Op1: Rotation
-    m_tree.rotate(m_nodes[RANDOM_INT(nBlock)]);
-    // Op2: Moving a block
-    m_tree.move(m_nodes[RANDOM_INT(nBlock)], m_nodes[RANDOM_INT(nBlock)], RANDOM_BOOL);
-    // Op3: Swapping two blocks
-    m_tree.swap(m_nodes[RANDOM_INT(nBlock)], m_nodes[RANDOM_INT(nBlock)]);
+    switch (RANDOM_INT(3))
+    {
+    case 0: // Op1: Rotation
+        m_tree.rotate(m_nodes[RANDOM_INT(nBlock)]);
+        break;
+    case 1: // Op2: Moving a block
+        m_tree.move(m_nodes[RANDOM_INT(nBlock)], m_nodes[RANDOM_INT(nBlock)], RANDOM_BOOL);
+        break;
+    case 2: // Op3: Swapping two blocks
+        m_tree.swap(m_nodes[RANDOM_INT(nBlock)], m_nodes[RANDOM_INT(nBlock)]);
+        break;
+    }
+    
+    // m_tree.rotate(m_nodes[RANDOM_INT(nBlock)]);
+    // m_tree.move(m_nodes[RANDOM_INT(nBlock)], m_nodes[RANDOM_INT(nBlock)], RANDOM_BOOL);
+    // m_tree.swap(m_nodes[RANDOM_INT(nBlock)], m_nodes[RANDOM_INT(nBlock)]);
 }
